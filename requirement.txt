@@ -1,5 +1,3 @@
-# typescript-assignment
-
 Requirement: 
 
 实现一个 APIPOST localhost:3000/api/register该 API 会验证如下条件：
