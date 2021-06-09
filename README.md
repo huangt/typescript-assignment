@@ -20,18 +20,15 @@ Password 是否符合要求：
 curl commands for testing:
 
 
-- curl --request POST 'localhost:3000/users' \
+- curl --request POST 'localhost:3000/api/register' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "username": "testUser",
     "password": "11a11a11a11"
 }'
 
-- curl --request GET 'localhost:3000/users' \ 
---header 'Content-Type: application/json'  
+- curl --request GET 'localhost:3000/api/users' --header 'Content-Type: application/json'  
 
-- curl --request DELETE "localhost:3000/users/testUser" \                              
---header 'Content-Type: application/json'
+- curl --request DELETE "localhost:3000/api/testUser" --header 'Content-Type: application/json'
 
-- curl --request GET "localhost:3000/users/testUser" \                               
---header 'Content-Type: application/json'
+- curl --request GET "localhost:3000/api/testUser" --header 'Content-Type: application/json'

@@ -10,8 +10,7 @@ export class UsersRoutes extends CommonRoutesConfig {
 
     configureRoutes(): express.Application {
         this.app
-            .route(`/users`)
-            .get(UsersController.listUsers)
+            .route(`/api/register`)
             .post(
                 UsersMiddleware.validateRequiredUserBodyFields,
                 UsersMiddleware.validateUsername,
@@ -19,10 +18,12 @@ export class UsersRoutes extends CommonRoutesConfig {
                 UsersMiddleware.validatePassword,
                 UsersController.createUser
             );
-
+        this.app
+            .route(`/api/users`)
+            .get(UsersController.listUsers);
         this.app.param(`username`, UsersMiddleware.extractUsername);
         this.app
-            .route(`/users/:username`)
+            .route(`/api/:username`)
             .all(UsersMiddleware.validateUserExists)
             .get(UsersController.getUserByUsername)
             .delete(UsersController.removeUser);
