@@ -15,8 +15,8 @@ class UserController {
     }
 
     async createUser(req: express.Request, res: express.Response) {
-        const userId = await usersService.create(req.body);
-        res.status(201).send({ username: userId });
+        const username = await usersService.create(req.body);
+        res.status(201).send({ username: username });
     }
 
     async removeUser(req: express.Request, res: express.Response) {
