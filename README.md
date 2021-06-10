@@ -17,8 +17,8 @@ Password 是否符合要求：
 3. 尽量提供类型定义
 
 
-curl commands for testing:
-
+Testing:
+- npm run test
 
 - curl --request POST 'localhost:3000/api/register' \
 --header 'Content-Type: application/json' \
